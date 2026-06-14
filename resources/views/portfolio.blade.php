@@ -99,7 +99,7 @@
         <h1 class="home-name">Glevin Bonganciso</h1>
         <p class="home-role"><span class="typed-role"></span></p>
         <p class="home-sub" data-i18n="home.sub">
-            I design and build full-stack web applications and cross-platform mobile apps —
+            I design and build full-stack web applications and cross-platform mobile apps 
             turning ideas into clean, functional products using Laravel, Next.js, and React Native.
         </p>
         <div class="home-actions">
@@ -132,7 +132,7 @@
         <div class="cv-modal-header">
             <div class="cv-modal-title">
                 <i class='bx bx-file'></i>
-                <span>Glevin Bonganciso — CV</span>
+                <span>Glevin Bonganciso   CV</span>
             </div>
             <div class="cv-modal-actions">
                 <a href="{{ asset('files/cv.pdf') }}"

@@ -232,7 +232,33 @@ class PortfolioController extends Controller
                 ],
                 'features'    => $this->t($tr, 'nectech.features', $lang),
             ],
+           
+[
+    'name'        => 'Installment Tracker System',
+    'type'        => 'web',
+    'ongoing'     => false,
+    'description' => 'A Laravel-based web application designed to streamline installment payment management for small businesses. The system enables efficient customer record management, payment tracking, balance monitoring, and installment history reporting through an intuitive and responsive interface. It helps improve payment monitoring accuracy and reduces manual record-keeping efforts.',
+    'tags'        => ['Laravel', 'PHP', 'MySQL', 'TypeScript'],
 
+    'github'      => '',
+    'demo'        => '',
+    'featured'    => true,
+    'image'       => 'images/installmenttracker/install1.png',
+    'images'      => [
+        'images/installmenttracker/install1.png',
+        'images/installmenttracker/install2.png',
+    ],
+    'features'    => [
+        'Customer management and account tracking',
+        'Installment payment recording and history',
+        'Automatic balance calculation',
+        'Payment status monitoring',
+        'Customer search and filtering',
+        'Dashboard with installment summaries',
+        'Responsive design for desktop and mobile devices',
+        'Secure authentication and user access control',
+    ],
+],
             // ── MOBILE ──────────────────────────────────────────────────
             [
                 'name'        => $this->t($tr, 'hours.name', $lang),
