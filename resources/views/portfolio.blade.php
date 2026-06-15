@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Glevin Bonganciso — Web & Mobile Developer</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="{{ asset('css/portfolio.css') }}">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   
@@ -257,11 +257,11 @@
             if (!empty($project['images'])) {
                 foreach ($project['images'] as $img) {
                     $clean = ltrim($img, '/ ');
-                    if (file_exists(public_path($clean))) $allImages[] = asset($clean);
+                   $allImages[] = asset($clean);
                 }
             } elseif (!empty($project['image'])) {
                 $clean = ltrim($project['image'], '/ ');
-                if (file_exists(public_path($clean))) $allImages[] = asset($clean);
+                $allImages[] = asset($clean);
             }
             $hasImages  = count($allImages) > 0;
             $multiImage = count($allImages) > 1;
@@ -379,36 +379,35 @@
                 <div class="gallery-block">
                     <p class="gallery-label"><i class='bx bx-image-alt'></i> <span data-i18n="exp.officePhotos">Office Photos</span></p>
                     <div class="gallery-strip">
-                        @foreach ([
-                            ['src' => 'images/image1.jpg', 'alt' => 'Office Photo 1'],
-                            ['src' => 'images/image2.jpg', 'alt' => 'Office Photo 2'],
-                            ['src' => 'images/image3.jpg', 'alt' => 'Office Photo 3'],
-                        ] as $i => $photo)
-                            @if (file_exists(public_path($photo['src'])))
-                                <div class="gallery-thumb" onclick="openLightbox({{ $i }})" title="{{ $photo['alt'] }}">
-                                    <img src="{{ asset($photo['src']) }}" alt="{{ $photo['alt'] }}">
-                                    <div class="gallery-thumb-overlay">
-                                        <div class="gallery-expand-icon"><i class='bx bx-expand-alt'></i></div>
-                                    </div>
-                                </div>
-                            @endif
-                        @endforeach
+                       @foreach ([
+    ['src' => 'images/image1.jpg', 'alt' => 'Office Photo 1'],
+    ['src' => 'images/image2.jpg', 'alt' => 'Office Photo 2'],
+    ['src' => 'images/image3.jpg', 'alt' => 'Office Photo 3'],
+] as $i => $photo)
+
+    <div class="gallery-thumb" onclick="openLightbox({{ $i }})" title="{{ $photo['alt'] }}">
+        <img src="{{ asset($photo['src']) }}" alt="{{ $photo['alt'] }}">
+        <div class="gallery-thumb-overlay">
+            <div class="gallery-expand-icon"><i class='bx bx-expand-alt'></i></div>
+        </div>
+    </div>
+
+@endforeach
                     </div>
-                    @php $certPath = public_path('images/certificate.png'); @endphp
-                    @if (file_exists($certPath))
-                        <div class="gallery-cert-row">
-                            <div class="cert-mini-wrap" onclick="openLightbox(3)">
-                                <div class="cert-mini-thumb">
-                                    <img src="{{ asset('images/certificate.png') }}" alt="Certificate">
-                                </div>
-                                <div class="cert-mini-info">
-                                    <p class="cert-mini-title" data-i18n="exp.certTitle">Certificate of Completion</p>
-                                    <p class="cert-mini-sub">BizMatch Company · Aug–Dec 2024 · <span data-i18n="exp.clickToView">click to view</span></p>
-                                </div>
-                                <i class='bx bx-award cert-mini-icon'></i>
-                            </div>
-                        </div>
-                    @endif
+               
+                       <div class="gallery-cert-row">
+    <div class="cert-mini-wrap" onclick="openLightbox(3)">
+        <div class="cert-mini-thumb">
+            <img src="{{ asset('images/certificate.png') }}" alt="Certificate">
+        </div>
+        <div class="cert-mini-info">
+            <p class="cert-mini-title">Certificate of Completion</p>
+            <p class="cert-mini-sub">BizMatch Company · Aug–Dec 2024 · click to view</p>
+        </div>
+        <i class='bx bx-award cert-mini-icon'></i>
+    </div>
+</div>
+                
                 </div>
             </div>
         </div>
